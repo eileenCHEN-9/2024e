@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+    <title>city_edited_thiessen</title>
+    <layers>
+        <layer>
+            <datasource>
+                <type>ESRI Shapefile</type>
+                <path>city_edited_thiessen.shp</path>
+            </datasource>
+            <layername>city_edited_thiessen</layername>
+            <title/>
+            <variable_order>
+                <time_ids>
+                    <id>time 0</id>
+                </time_ids>
+                <var>POLY_ID</var>
+                <var>province_i</var>
+                <var>city_id</var>
+                <var>
+                    COORD_X
+                    <displayed_decimals>6</displayed_decimals>
+                </var>
+                <var>
+                    COORD_Y
+                    <displayed_decimals>6</displayed_decimals>
+                </var>
+            </variable_order>
+            <custom_classifications/>
+            <weights_entries>
+                <weights>
+                    <title>city_edited_thiessen</title>
+                    <default/>
+                    <meta_info>
+                        <weights_type>queen</weights_type>
+                        <order>1</order>
+                        <inc_lower_orders>false</inc_lower_orders>
+                        <path>city_edited_thiessen.gal</path>
+                        <id_variable>POLY_ID</id_variable>
+                        <symmetry>symmetric</symmetry>
+                        <num_observations>332</num_observations>
+                        <min_neighbors>3</min_neighbors>
+                        <max_neighbors>10</max_neighbors>
+                        <mean_neighbors>5.7831325301204819</mean_neighbors>
+                        <median_neighbors>6</median_neighbors>
+                        <non_zero_perc>1.7419073885905065</non_zero_perc>
+                    </meta_info>
+                </weights>
+            </weights_entries>
+            <default_vars>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+            </default_vars>
+        </layer>
+    </layers>
+</project>
