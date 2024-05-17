@@ -7,7 +7,9 @@ version 15
 cd "D:\Github Desktop\2024e\data" 
 
 *use "https://raw.githubusercontent.com/eileenCHEN-9/PhD_2022_2025/main/data/county_predicted.dta" // County-level
-use "https://raw.githubusercontent.com/eileenCHEN-9/PhD_2022_2025/main/data/Main_Dataset.dta" // City-level
+use "https://raw.githubusercontent.com/eileenCHEN-9/PhD_2022_2025/main/data/city_predicted.dta" // City-level
+
+
 *-------------------------------------------------------
 ***************** Define global parameters*************
 *-------------------------------------------------------
