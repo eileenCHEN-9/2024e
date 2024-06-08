@@ -8,10 +8,10 @@ clear all
 macro drop _all
 set more off
 cls
-version 12
+version 17
 
 ** Change your working directory
-cd "/Users/carlosmendez/Documents/GitHub/project2021b/c40-explain-clubs"
+cd "D:\Github Desktop\2024e\data" 
 
 
 
@@ -20,7 +20,7 @@ cd "/Users/carlosmendez/Documents/GitHub/project2021b/c40-explain-clubs"
 *-------------------------------------------------------
 
 * Load dataset of determinants
-use "https://raw.githubusercontent.com/eileenCHEN-9/PhD_2022_2025/main/data/city_predicted.dta" // City-level
+use "https://raw.githubusercontent.com/eileenCHEN-9/2024e/main/data/Dataset_clubs_spatiallag.dta"
 *import delimited "../data/longPanel_N274T17.csv", clear
 
 * Merge with clubs panel dataset
@@ -28,24 +28,19 @@ use "https://raw.githubusercontent.com/eileenCHEN-9/PhD_2022_2025/main/data/city
 sum
 
 * Declare panel data
-sort id year
-xtset id year
+sort city_id year
+xtset city_id year
 xtsum
 
 * Add shorter labels to variables
-label variable clubPS "Club"
-label variable sm "Share manufacturing"
-label variable ssr "Share routine services"
-label variable ln_inv "Ln gross fixed capital formation"
-label variable ln_popS "Ln population with high education"
-label variable ssk "Share knowledge intensive services"
-label variable urb "Urbanization degree"
+*label variable clubPS "Club"
+
 
 *-------------------------------------------------------
 *  Define model parameters
 *-------------------------------------------------------
-global ylist clubPS
-global xlist ln_gdp sm ssk ssr ln_inv ln_popS urb 
+global ylist fclub_trend_lg_gdppc_predicted
+global xlist lg_gdppc_predicted lg101214
 global modelName model01
 global initialYear 2003
 
