@@ -20,7 +20,7 @@ cd "D:\Github Desktop\2024e\data"
 *-------------------------------------------------------
 
 * Load dataset of determinants
-use "https://raw.githubusercontent.com/eileenCHEN-9/2024e/main/data/Dataset_clubs_spatiallag.dta"
+use "https://raw.githubusercontent.com/eileenCHEN-9/2024e/main/data/Clubs_spatiallags.dta"
 *import delimited "../data/longPanel_N274T17.csv", clear
 
 * Merge with clubs panel dataset
@@ -40,9 +40,9 @@ xtsum
 *  Define model parameters
 *-------------------------------------------------------
 global ylist fclub_trend_lg_gdppc_predicted
-global xlist lg_gdppc_predicted lg101214
-global modelName model01
-global initialYear 2003
+global xlist non_agri_share emp_nonagri agri_gdp_empgr nonagri_gdp_empgr urban_pop_percent lg101214 w_non_agri_share w_emp_nonagri w_agri_gdp_empgr w_nonagri_gdp_empgr w_urban_pop_percent w_lg101214
+global modelName model01 
+global initialYear 2001
 
 *-------------------------------------------------------
 *  Select sample
@@ -76,6 +76,7 @@ margins, dydx(*) atmeans predict(outcome(2))
 margins, dydx(*) atmeans predict(outcome(3))
 margins, dydx(*) atmeans predict(outcome(4))
 margins, dydx(*) atmeans predict(outcome(5))
+margins, dydx(*) atmeans predict(outcome(6))
 
 * Export formated table of marginal effects
 
@@ -98,3 +99,7 @@ outreg2 using "../results/${modelName}.xls", tex(fragment) append dec(3) ctitle(
 ologit $ylist $xlist, robust
 margins, dydx(*) atmeans predict(outcome(5)) post
 outreg2 using "../results/${modelName}.xls", tex(fragment) append dec(3) ctitle(Club 5) label nonotes
+
+ologit $ylist $xlist, robust
+margins, dydx(*) atmeans predict(outcome(6)) post
+outreg2 using "../results/${modelName}.xls", tex(fragment) append dec(3) ctitle(Club 6) label nonotes
