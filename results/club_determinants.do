@@ -20,7 +20,7 @@ cd "D:\Github Desktop\2024e\data"
 *-------------------------------------------------------
 
 * Load dataset of determinants
-use "https://raw.githubusercontent.com/eileenCHEN-9/2024e/main/data/Clubs_spatiallags.dta"
+use "https://raw.githubusercontent.com/eileenCHEN-9/2024e/main/data/Data_clubs_04_interpolated_spatial.dta"
 *import delimited "../data/longPanel_N274T17.csv", clear
 
 * Merge with clubs panel dataset
@@ -28,8 +28,8 @@ use "https://raw.githubusercontent.com/eileenCHEN-9/2024e/main/data/Clubs_spatia
 sum
 
 * Declare panel data
-sort city_id year
-xtset city_id year
+sort id year
+xtset id year
 xtsum
 
 * Add shorter labels to variables
@@ -42,7 +42,7 @@ xtsum
 global ylist fclub_trend_lg_gdppc_predicted
 global xlist non_agri_share emp_nonagri agri_gdp_empgr nonagri_gdp_empgr urban_pop_percent lg101214 w_non_agri_share w_emp_nonagri w_agri_gdp_empgr w_nonagri_gdp_empgr w_urban_pop_percent w_lg101214
 global modelName model01 
-global initialYear 2001
+global initialYear 2004
 
 *-------------------------------------------------------
 *  Select sample
