@@ -20,7 +20,7 @@ cd "D:\Github Desktop\2024e\data"
 *-------------------------------------------------------
 
 * Load dataset of determinants
-use "https://raw.githubusercontent.com/eileenCHEN-9/2024e/main/data/Clubs_spatiallags.dta"
+use "https://raw.githubusercontent.com/eileenCHEN-9/2024e/main/data/Data_clubs_04_interpolated_spatial.dta"
 *import delimited "../data/longPanel_N274T17.csv", clear
 
 * Merge with clubs panel dataset
@@ -28,8 +28,8 @@ use "https://raw.githubusercontent.com/eileenCHEN-9/2024e/main/data/Clubs_spatia
 sum
 
 * Declare panel data
-sort city_id year
-xtset city_id year
+sort id year
+xtset id year
 xtsum
 
 * Add shorter labels to variables
